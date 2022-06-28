@@ -1,2 +1,2 @@
-# Tasty-Kitchen
+# REACT_PRACTISE
 Created with CodeSandbox
