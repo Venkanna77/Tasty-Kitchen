@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./index.css";
 
 const Login = (props) => {
@@ -9,6 +9,10 @@ const Login = (props) => {
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [showSubmitError, setShowSumbitError] = useState(false);
+  const jwtToken = Cookies.get("jwt_token");
+  if (jwtToken !== undefined) {
+    return <Navigate to="/home" />;
+  }
 
   const onChangeUsername = (event) => {
     setUsername(event.target.value);
